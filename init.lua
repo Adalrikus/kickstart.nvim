@@ -575,7 +575,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = {},
         gopls = {
           keys = {
             -- Workaround for the lack of a DAP strategy in neotest-go: https://github.com/nvim-neotest/neotest-go/issues/12
@@ -710,6 +710,8 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'clangd',
+        'clang-format',
         'shfmt',
         'golangci-lint',
         'golines',
@@ -780,6 +782,7 @@ require('lazy').setup({
         python = { 'isort', 'black' },
         go = { 'goimports-reviser', 'gofumpt', 'golines' },
         sh = { 'shfmt' },
+        c = { 'clang-format' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
