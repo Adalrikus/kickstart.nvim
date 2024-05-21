@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -583,7 +583,7 @@ require('lazy').setup({
           },
           settings = {
             gopls = {
-              gofumpt = true,
+              gofumpt = false,
               codelenses = {
                 gc_details = false,
                 generate = true,
@@ -715,7 +715,7 @@ require('lazy').setup({
         'shfmt',
         'golangci-lint',
         'golines',
-        'goimports-reviser',
+        'goimports',
         'gopls',
         'pyright',
         'bashls',
@@ -780,7 +780,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         python = { 'isort', 'black' },
-        go = { 'goimports-reviser', 'gofumpt', 'golines' },
+        go = { 'goimports', 'gofumpt' },
         sh = { 'shfmt' },
         c = { 'clang-format' },
         --
@@ -981,6 +981,7 @@ require('lazy').setup({
         'html',
         'lua',
         'luadoc',
+        'make',
         'markdown',
         'python',
         'ninja',
