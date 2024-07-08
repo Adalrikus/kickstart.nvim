@@ -26,6 +26,8 @@ vim.keymap.set('n', '<C-e>', function()
   toggle_telescope(require('harpoon'):list())
 end, { desc = 'Harpoon menu' })
 
+vim.keymap.set({ 'n', 'v' }, '<leader>g', ':Gen<CR>', { desc = '[g]en.nvim' })
+
 return {
   {
     'towolf/vim-helm',
@@ -84,6 +86,12 @@ return {
     -- order to load the plugin when the command is run for the first time
     keys = {
       { '<leader>l', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
+    },
+  },
+  {
+    'David-Kunz/gen.nvim',
+    opts = {
+      model = 'llama3', -- The default model to use.
     },
   },
 }
